@@ -9,8 +9,8 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <OutputPath>..\bin\$(Configuration)\</OutputPath>
     <Description>Parallel NUnit library</Description>
-    <PackageProjectUrl>https://github.com/Mnk92/cnptr</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Mnk92/cnptr.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Mnk92/ConsoleUnitTestsRunner</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/ConsoleUnitTestsRunner.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>NUnit</PackageTags>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
