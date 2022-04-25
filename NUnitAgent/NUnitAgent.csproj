@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mnk.NUnitAgent</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <Description>Parallel NUnit execution agent</Description>
+    <PackageProjectUrl>https://github.com/Mnk92/cnptr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/cnptr.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>NUnit</PackageTags>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParallelNUnit\Mnk.ParallelNUnit.csproj" />
+  </ItemGroup>
+</Project>

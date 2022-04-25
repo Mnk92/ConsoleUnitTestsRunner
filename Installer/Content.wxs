@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?include Variables.wxi?>
+    <Fragment>
+        <DirectoryRef Id="INSTALLLOCATION" FileSource="..\bin\Release\net6.0" >
+            <Component Id="Binaries" Guid="28449676-D1EC-4C67-9295-29CC3E5C0500">
+                <File Name='ConsoleUnitTestsRunner.dll'/>
+                <File Name='ConsoleUnitTestsRunner.exe'/>
+                <File Name='ConsoleUnitTestsRunner32.exe'/>
+                <File Name='Google.Protobuf.dll'/>
+                <File Name='Grpc.AspNetCore.Server.dll'/>
+                <File Name='Grpc.AspNetCore.Server.ClientFactory.dll'/>
+                <File Name='Grpc.Core.Api.dll'/>
+                <File Name='Grpc.Net.Client.dll'/>
+                <File Name='Grpc.Net.ClientFactory.dll'/>
+                <File Name='Grpc.Net.Common.dll'/>
+                <File Name='License.rtf'/>
+                <File Name='LightInject.dll'/>
+                <File Name='Mnk.Library.Common.dll'/>
+                <File Name='Mnk.Library.Interprocess.dll'/>
+                <File Name='Mnk.ParallelNUnit.dll'/>
+                <File Name='Mnk.ParallelTests.dll'/>
+                <File Name='nunit.framework.dll'/>
+                <File Name='NUnitAgent.dll'/>
+                <File Name='NUnitAgent.exe'/>
+                <File Name='RunAsx86.exe'/>
+                <File Name='System.Text.Json.dll'/>
+            </Component>
+            <Component Id="RegistryEntries" Guid="437C1F71-8ADE-41D2-90DB-7600362532DE">
+                <RegistryKey Root="HKCU" Key="$(var.RegistryPath)">
+                    <RegistryValue Type="string" Name="InstallDir" Value="[INSTALLLOCATION]" />
+                </RegistryKey>
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

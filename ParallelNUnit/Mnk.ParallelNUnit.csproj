@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mnk.ParallelNUnit</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <Description>Parallel NUnit library</Description>
+    <PackageProjectUrl>https://github.com/Mnk92/cnptr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/cnptr.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>NUnit</PackageTags>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Proto\**" />
+    <EmbeddedResource Remove="Proto\**" />
+    <None Remove="Proto\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParallelTests\Mnk.ParallelTests.csproj" />
+  </ItemGroup>
+</Project>

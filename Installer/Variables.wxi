@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+    <?define ProductName="ConsoleUnitTestsRunner" ?>
+    <?define ExeName="ConsoleUnitTestsRunner" ?>
+    <?define ProductVersion="2.00" ?>
+    <?define UpgradeCode="AFEA58DD-51AC-4C43-9E48-A9F71EEF1CB2"?>
+    <?define Manufacturer="Mnk"?>
+    <?define RegistryPath="Software\Mnk\ConsoleUnitTestsRunner"?>
+    <?define WebSite="https://cpntr.codeplex.com/"?>
+</Include>

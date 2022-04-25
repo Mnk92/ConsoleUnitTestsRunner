@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Mnk.ParallelTests.Contracts";
+
+message ResultMessage
+{
+	int32 Id = 1;
+	string Description = 2;
+	string Key = 3;
+	string FullName = 4;
+	string Type = 5;
+	string Message = 6;
+	string StackTrace = 7;
+	enum TestResultState
+	{
+		Cancelled = 0;
+		ChildFailure = 1;
+		ChildIgnored = 2;
+		ChildWarning = 3;
+		Error = 4;
+		Explicit = 5;
+		Failure = 6;
+		Ignored = 7;
+		Inconclusive = 8;
+		NotRunnable = 9;
+		SetUpError = 10;
+		SetUpFailure = 11;
+		Skipped = 12;
+		Success = 13;
+		TearDownError = 14;
+		Warning = 15;
+	}
+	TestResultState State = 8;
+	enum TestFailedOn
+	{
+		Test = 0;
+		SetUp = 1;
+		TearDown = 2;
+		Parent = 3;
+		Child = 4;
+	}
+	TestFailedOn FailureSite = 9;
+	repeated string Categories = 10;
+	double Duration = 11;
+	int32 AssertCount = 12;
+	string Output = 13;
+	repeated ResultMessage Children = 14;
+}
+
+message ResultsMessage
+{
+	repeated ResultMessage Items = 1;
+}
+
+message TestRunConfigMessage
+{
+	message TestsIds
+	{
+		repeated int32 Ids = 1;
+	}
+	repeated TestsIds TestsToRun = 1;
+	repeated string DllPaths = 2;
+	int32 StartDelay = 3;
+}
+
+message StringMessage
+{
+	string Value = 1;
+}
+
+message BoolMessage
+{
+	bool Value = 1;
+}
+
+service ITestsClient
+{
+	rpc SetCollectedTests(ResultsMessage) returns (google.protobuf.Empty);
+	rpc GiveMeConfig(google.protobuf.Empty) returns (TestRunConfigMessage);
+	rpc SendTestsResults(ResultsMessage) returns(BoolMessage);
+	rpc CanFinish(StringMessage) returns (google.protobuf.Empty);
+	rpc GetCollected(google.protobuf.Empty) returns(ResultsMessage);
+}
+
+service ITestsServer
+{
+	rpc CanClose(google.protobuf.Empty) returns (google.protobuf.Empty);
+}

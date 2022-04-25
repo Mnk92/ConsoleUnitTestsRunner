@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mnk.ParallelTests</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <Description>Parallel tests library</Description>
+    <PackageProjectUrl>https://github.com/Mnk92/cnptr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/cnptr.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>NUnit</PackageTags>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LightInject" Version="6.4.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.45.0" />
+    <PackageReference Include="Mnk.Library.Common" Version="2.0.0" />
+    <PackageReference Include="Mnk.Library.Interprocess" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="Proto\contracts.proto" GrpcServices="Both" Link="Proto\contracts.proto" />
+  </ItemGroup>
+</Project>

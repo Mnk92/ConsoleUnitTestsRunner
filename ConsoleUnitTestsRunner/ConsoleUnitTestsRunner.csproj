@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Mnk.ConsoleUnitTestsRunner</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <Description>Console parallel NUnit executor</Description>
+    <PackageProjectUrl>https://github.com/Mnk92/cnptr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/cnptr.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>NUnit</PackageTags>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParallelNUnit\Mnk.ParallelNUnit.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="License.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\tools\RunAsx86.exe">
+      <Link>RunAsx86.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
