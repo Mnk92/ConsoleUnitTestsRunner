@@ -3,11 +3,11 @@ using Mnk.ParallelTests.Contracts;
 
 namespace Mnk.ParallelNUnit.Packages.Execution
 {
-    abstract class InternalTestsExecutionFacade : ITestsExecutionFacade
+    class InternalTestsExecutionFacade : ITestsExecutionFacade
     {
         private readonly ITestFacade executor;
 
-        protected InternalTestsExecutionFacade(ITestFacade executor)
+        public InternalTestsExecutionFacade(ITestFacade executor)
         {
             this.executor = executor;
         }

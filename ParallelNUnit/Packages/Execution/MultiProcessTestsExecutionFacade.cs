@@ -2,7 +2,7 @@
 
 namespace Mnk.ParallelNUnit.Packages.Execution
 {
-    abstract class MultiProcessTestsExecutionFacade : ProcessTestsExecutionFacade
+    class MultiProcessTestsExecutionFacade : ProcessTestsExecutionFacade
     {
         public override void Run(TestsConfig config, string handle)
         {
