@@ -5,15 +5,22 @@ namespace Mnk.ParallelNUnit.Tests.ParallelNUnit
 {
     [TestClass]
     [TestCategory("Integration")]
-    public class ThreadNUnitTestFixture : TestFixture
+    public class MultiProcessNUnit86TestFixture : TestFixture
     {
+        private const string NUnitAgentPath = "NUnitAgent.exe";
+        private const string RunAsx86Path = "RunAsx86.exe";
+
         [TestInitialize]
         public override void SetUp()
         {
             Config = new TestsConfig
             {
+                NUnitAgentPath = NUnitAgentPath,
+                RunAsx86Path = RunAsx86Path,
                 DirToCloneTests = Path.GetTempPath(),
-                Mode = TestsRunnerMode.Internal
+                RunAsAdmin = false,
+                RunAsx86 = true,
+                Mode = TestsRunnerMode.MultiProcess
             };
             base.SetUp();
         }

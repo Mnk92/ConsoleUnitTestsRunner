@@ -1,19 +1,13 @@
-﻿using Mnk.ConsoleUnitTestsRunner.Code.Contracts;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Mnk.ConsoleUnitTestsRunner.Code.Contracts;
 using Mnk.ParallelTests.Contracts;
-using NUnit.Framework;
 
 namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
 {
-    [TestFixture]
-    class CommandLineArgsTestFixture
+    [TestClass]
+    public class CommandLineArgsTestFixture
     {
-        [Test, Explicit]
-        public void Explicit_test()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
+        [TestMethod]
         public void Should_save_valid_defaults()
         {
             //Arrange
@@ -34,12 +28,12 @@ namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
             Assert.AreEqual(false, args.Labels);
             Assert.AreEqual(false, args.Wait);
             Assert.AreEqual(false, args.Teamcity);
-            CollectionAssert.AreEqual(new List<string>(), args.Paths);
+            CollectionAssert.AreEqual(new List<string>(), args.Paths.ToList());
             Assert.AreEqual(TestsRunnerMode.Internal, args.Mode);
             Assert.AreEqual(false, args.ReturnSuccess);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_map_valid_defaults()
         {
             //Arrange
@@ -62,7 +56,7 @@ namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
             Assert.AreEqual(null, config.IncludeCategories);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_be_able_to_save_exclude()
         {
             //Arrange
@@ -73,7 +67,7 @@ namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
             Assert.AreEqual(null, args.Include);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_be_able_to_save_include()
         {
             //Arrange
@@ -84,7 +78,7 @@ namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
             CollectionAssert.AreEqual(new[] { "abc", "cde" }, args.Include);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_map_include_to_tests_config()
         {
             //Arrange
@@ -97,7 +91,7 @@ namespace Mnk.ParallelNUnit.Tests.ConsoleUnitTestsRunner
             CollectionAssert.AreEqual(new[] { "abc", "cde" }, config.Categories);
         }
 
-        [Test]
+        [TestMethod]
         public void Should_map_exclude_to_tests_config()
         {
             //Arrange
