@@ -8,6 +8,5 @@
 #else
  "Release";
 #endif
-
     }
 }
